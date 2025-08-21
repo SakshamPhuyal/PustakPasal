@@ -27,10 +27,20 @@ export default function Home() {
             Search
           </button>
         </div>
-    
       </div>
       <div>
       <p className="ml-22 mt-5 font-bold text-2xl">Featured Books</p>
+      </div>
+      <div className="flex mt-5 mb-10">
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
       </div>
    </div>
   );

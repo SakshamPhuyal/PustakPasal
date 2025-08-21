@@ -10,7 +10,7 @@ export const Navbar=()=>{
 <div className="flex ml-150 gap-10">
     <Link href="/">Home</Link>
     <Link href="/browse">Browse</Link>
-    <Link href="/AddBooks">Add Books</Link>
+    <Link href="/addbooks">Add Books</Link>
 </div>
 <div>
 
