@@ -33,7 +33,7 @@ export default function Home() {
       </div>
       <div className="flex mt-5 mb-10">
       <div className="w-100 h-95 rounded-xl border ml-20">
-
+      
       </div>
       <div className="w-100 h-95 rounded-xl border ml-20">
 
