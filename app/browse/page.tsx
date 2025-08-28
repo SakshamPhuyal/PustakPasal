@@ -18,7 +18,41 @@ export default function Browse(){
                       </button>
                     </div>
                   </div>
-                  <div></div>
+                  <div>
+                     <div className="flex mt-25 mb-10">
+      <div className="w-100 h-95 rounded-xl border ml-20">
+      
+      </div>
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
+      </div>
+       <div className="flex mt-5 mb-10">
+      <div className="w-100 h-95 rounded-xl border ml-20">
+      
+      </div>
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
+      </div>
+       <div className="flex mt-5 mb-10">
+      <div className="w-100 h-95 rounded-xl border ml-20">
+      
+      </div>
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
+      <div className="w-100 h-95 rounded-xl border ml-20">
+
+      </div>
+      </div>
+                  </div>
         </div>
     );
 

@@ -8,9 +8,9 @@ export const Navbar=()=>{
    <Link className="flex" href="/"><Image src="/book.png" alt="book" width={60} height={30}/> PustakPasal</Link> 
 </div>
 <div className="flex ml-150 gap-10">
-    <Link href="/">Home</Link>
-    <Link href="/browse">Browse</Link>
-    <Link href="/addbooks">Add Books</Link>
+    <Link className="hover:text-blue-600" href="/">Home</Link>
+    <Link className="hover:text-blue-600" href="/browse">Browse</Link>
+    <Link className="hover:text-blue-600" href="/addbooks">Add Books</Link>
 </div>
 <div>
 

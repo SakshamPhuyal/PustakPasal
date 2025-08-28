@@ -27,7 +27,7 @@ export default function Home() {
             placeholder="Search books..."
             className="flex-grow border  border-gray-400 rounded-l-xl px-4 py-2 text-lg focus:outline-blue-500"
           />
-          <button className="bg-green-600 text-white px-4 py-2 rounded-r-xl text-lg flex items-center gap-2">
+          <button className="bg-green-600 text-white px-4 py-2 rounded-r-xl cursor-pointer text-lg flex items-center gap-2">
             <HiMagnifyingGlass size={20} />
             Search
           </button>
