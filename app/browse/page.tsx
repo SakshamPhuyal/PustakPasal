@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
@@ -17,21 +16,19 @@ export default function Browse() {
   const [books, setBooks] = useState<Book[]>([]);
   const [search, setSearch] = useState("");
 
-  // fetch books from API
-useEffect(() => {
-  fetch("/api/books")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("API response:", data); // 👈 debug
-      setBooks(Array.isArray(data) ? data : data.books || []);
-    })
-    .catch((err) => {
-      console.error("Failed to fetch books:", err);
-      setBooks([]); // fallback
-    });
-}, []);
+  useEffect(() => {
+    fetch("/api/books")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("API response:", data);
+        setBooks(Array.isArray(data) ? data : data.books || []);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch books:", err);
+        setBooks([]);
+      });
+  }, []);
 
-  // filter books based on search
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(search.toLowerCase()) ||
     book.author.toLowerCase().includes(search.toLowerCase()) ||
@@ -40,7 +37,6 @@ useEffect(() => {
 
   return (
     <div className="p-10">
-      {/* Title */}
       <p className="text-3xl font-bold mb-8">Browse Books</p>
 
       {/* Search Bar */}
@@ -53,9 +49,7 @@ useEffect(() => {
             onChange={(e) => setSearch(e.target.value)}
             className="flex-grow border border-gray-400 rounded-l-xl px-4 py-2 text-lg focus:outline-blue-500"
           />
-          <button
-            className="bg-green-600 text-white px-4 py-2 rounded-r-xl text-lg flex items-center gap-2"
-          >
+          <button className="bg-green-600 text-white px-4 py-2 rounded-r-xl text-lg flex items-center gap-2">
             <HiMagnifyingGlass size={20} />
             Search
           </button>
@@ -66,11 +60,7 @@ useEffect(() => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book) => (
-            <div
-              key={book._id}
-              className="border rounded-xl p-5 shadow hover:shadow-lg transition"
-            >
-              {/* Book Image */}
+            <div key={book._id} className="border rounded-xl p-5 shadow hover:shadow-lg transition">
               {book.image ? (
                 <img
                   src={book.image}
@@ -82,8 +72,6 @@ useEffect(() => {
                   <span className="text-gray-500">No Image</span>
                 </div>
               )}
-
-              {/* Book Info */}
               <h2 className="text-xl font-semibold">{book.title}</h2>
               <p className="text-gray-600">Author: {book.author}</p>
               <p className="text-gray-600">Category: {book.category}</p>
