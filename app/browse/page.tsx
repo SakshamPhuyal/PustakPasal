@@ -1,59 +1,99 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-export default function Browse(){
-    return(
-        <div>
-            <div>
-            <p className="text-3xl font-bold ml-15 mt-15">Browse Books</p>
-            </div>
-             <div className="mt-10 ml-100 w-full max-w-2xl">
-                    <div className="flex">
-                      <input
-                        type="text"
-                        placeholder="Search books..."
-                        className="flex-grow border  border-gray-400 rounded-l-xl px-4 py-2 text-lg focus:outline-blue-500"
-                      />
-                      <button className="bg-green-600 text-white px-4 py-2 rounded-r-xl text-lg flex items-center gap-2">
-                        <HiMagnifyingGlass size={20} />
-                        Search
-                      </button>
-                    </div>
-                  </div>
-                  <div>
-                     <div className="flex mt-25 mb-10">
-      <div className="w-100 h-95 rounded-xl border ml-20">
-      
-      </div>
-      <div className="w-100 h-95 rounded-xl border ml-20">
 
-      </div>
-      <div className="w-100 h-95 rounded-xl border ml-20">
+interface Book {
+  _id: string;
+  title: string;
+  author: string;
+  price: number;
+  category: string;
+  description?: string;
+  image?: string;
+}
 
-      </div>
-      </div>
-       <div className="flex mt-5 mb-10">
-      <div className="w-100 h-95 rounded-xl border ml-20">
-      
-      </div>
-      <div className="w-100 h-95 rounded-xl border ml-20">
+export default function Browse() {
+  const [books, setBooks] = useState<Book[]>([]);
+  const [search, setSearch] = useState("");
 
-      </div>
-      <div className="w-100 h-95 rounded-xl border ml-20">
+  // fetch books from API
+useEffect(() => {
+  fetch("/api/books")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("API response:", data); // 👈 debug
+      setBooks(Array.isArray(data) ? data : data.books || []);
+    })
+    .catch((err) => {
+      console.error("Failed to fetch books:", err);
+      setBooks([]); // fallback
+    });
+}, []);
 
-      </div>
-      </div>
-       <div className="flex mt-5 mb-10">
-      <div className="w-100 h-95 rounded-xl border ml-20">
-      
-      </div>
-      <div className="w-100 h-95 rounded-xl border ml-20">
+  // filter books based on search
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(search.toLowerCase()) ||
+    book.author.toLowerCase().includes(search.toLowerCase()) ||
+    book.category.toLowerCase().includes(search.toLowerCase())
+  );
 
-      </div>
-      <div className="w-100 h-95 rounded-xl border ml-20">
+  return (
+    <div className="p-10">
+      {/* Title */}
+      <p className="text-3xl font-bold mb-8">Browse Books</p>
 
-      </div>
-      </div>
-                  </div>
+      {/* Search Bar */}
+      <div className="max-w-2xl mb-10">
+        <div className="flex">
+          <input
+            type="text"
+            placeholder="Search books..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="flex-grow border border-gray-400 rounded-l-xl px-4 py-2 text-lg focus:outline-blue-500"
+          />
+          <button
+            className="bg-green-600 text-white px-4 py-2 rounded-r-xl text-lg flex items-center gap-2"
+          >
+            <HiMagnifyingGlass size={20} />
+            Search
+          </button>
         </div>
-    );
+      </div>
 
+      {/* Books Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {filteredBooks.length > 0 ? (
+          filteredBooks.map((book) => (
+            <div
+              key={book._id}
+              className="border rounded-xl p-5 shadow hover:shadow-lg transition"
+            >
+              {/* Book Image */}
+              {book.image ? (
+                <img
+                  src={book.image}
+                  alt={book.title}
+                  className="w-full h-48 object-cover rounded-md mb-4"
+                />
+              ) : (
+                <div className="w-full h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
+                  <span className="text-gray-500">No Image</span>
+                </div>
+              )}
+
+              {/* Book Info */}
+              <h2 className="text-xl font-semibold">{book.title}</h2>
+              <p className="text-gray-600">Author: {book.author}</p>
+              <p className="text-gray-600">Category: {book.category}</p>
+              <p className="text-green-700 font-bold mt-2">Rs. {book.price}</p>
+            </div>
+          ))
+        ) : (
+          <p className="text-gray-500">No books found.</p>
+        )}
+      </div>
+    </div>
+  );
 }

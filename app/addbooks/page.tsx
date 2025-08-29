@@ -1,4 +1,33 @@
+'use client';
+import { useState } from "react";
 export default function addBooks(){
+  const [form,setForm]=useState({
+    title:"",
+    author:"",
+    price:"",
+    category:"",
+    description:"",
+    image:"",
+  });
+  const handleChange=(
+    e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  )=>{
+    setForm({...form,[e.target.name]:e.target.value });
+  };
+  const handleSubmit=async(e:React.FormEvent)=>{
+    e.preventDefault();
+    const res=await fetch("/api/books",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(form),
+    });
+    if (res.ok) {
+      alert("Book added successfully!");
+      setForm({ title: "", author: "", price: "", category: "", description: "", image: "" });
+    } else {
+      alert("Error adding book!");
+    }
+  };
     return(
         <div>
             <div>
