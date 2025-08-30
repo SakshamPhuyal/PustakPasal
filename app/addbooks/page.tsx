@@ -113,7 +113,20 @@ export default function AddBooks() {
           />
         </div>
 
-        {/* Skipping file upload for now (needs FormData) */}
+        <div>
+          <label className="block mb-1 font-medium">Image URL / Filename</label>
+          <input
+            type="text"
+            name="image"
+            value={form.image}
+            onChange={handleChange}
+            className="w-full border rounded-md p-2"
+            placeholder="Paste image URL or filename (e.g. math10.jpg)"
+          />
+          <p className="text-sm text-gray-500 mt-1">
+            
+          </p>
+        </div>
 
         <button
           type="submit"
