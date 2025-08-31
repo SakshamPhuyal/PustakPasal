@@ -37,8 +37,9 @@ export default function Home() {
       <p className="ml-22 mt-5 font-bold text-2xl">Featured Books</p>
       </div>
       <div className="flex mt-5 mb-10">
-      <div className="w-100 h-95 rounded-xl border ml-20">
-      
+      <div className="w-100 h-95 rounded-xl border ml-20 pl-15 pt-5">
+      <Image src="https://imgs.search.brave.com/HXmle3srs2vRnKWap8iIOEZO7B9aV0vFDAJKejAxMZI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kM2xt/aDZ2eDkxbHJ3OC5j/bG91ZGZyb250Lm5l/dC9jYXRhbG9nL3By/b2R1Y3QvY2FjaGUv/NGUwMGMxZmE2ZTQ0/M2Q4ODIwYmIwYjQ4/OWNjN2VjYWUvbS9h/L21haGFiaXItcHVu/LWZfMS5qcGVn"
+      width={170} height={100} />
       </div>
       <div className="w-100 h-95 rounded-xl border ml-20">
 

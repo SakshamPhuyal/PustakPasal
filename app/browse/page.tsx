@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-
+import Image from "next/image";
 interface Book {
   _id: string;
   title: string;
@@ -60,7 +60,7 @@ export default function Browse() {
           filteredBooks.map((book) => (
             <div key={book._id} className="border rounded-xl p-5 shadow hover:shadow-lg transition">
               {book.image ? (
-                <img
+                <Image height={100} width={100}
                   src={book.image}
                   alt={book.title}
                   className="w-full h-48 object-cover rounded-md mb-4"
