@@ -33,21 +33,38 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div>
-      <p className="ml-22 mt-5 font-bold text-2xl">Featured Books</p>
-      </div>
-      <div className="flex mt-5 mb-10">
-      <div className="w-100 h-95 rounded-xl border ml-20 pl-15 pt-5">
-      <Image src="https://imgs.search.brave.com/HXmle3srs2vRnKWap8iIOEZO7B9aV0vFDAJKejAxMZI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kM2xt/aDZ2eDkxbHJ3OC5j/bG91ZGZyb250Lm5l/dC9jYXRhbG9nL3By/b2R1Y3QvY2FjaGUv/NGUwMGMxZmE2ZTQ0/M2Q4ODIwYmIwYjQ4/OWNjN2VjYWUvbS9h/L21haGFiaXItcHVu/LWZfMS5qcGVn"
-      width={170} height={100} />
-      </div>
-      <div className="w-100 h-95 rounded-xl border ml-20">
+      
+      <div className="mt-10 ml-20 mr-20">
+  <p className="font-bold text-2xl text-center mb-8">Why Choose Us?</p>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+  
+    <div className="p-6 border rounded-2xl shadow-md hover:shadow-lg transition">
+      <Image src="https://img.icons8.com/color/96/money-bag.png?utm_source=chatgpt.com" width={50} height={50} alt="Save Money" />
+      <h3 className="text-xl font-semibold mt-4">Save Money</h3>
+      <p className="text-gray-600 mt-2">
+        Buy second-hand books at affordable prices and save up to 70%.
+      </p>
+    </div>
 
-      </div>
-      <div className="w-100 h-95 rounded-xl border ml-20">
+    <div className="p-6 border rounded-2xl shadow-md hover:shadow-lg transition">
+      <Image src="https://img.icons8.com/color/96/checklist.png?utm_source=chatgpt.com" width={50} height={50} alt="Easy to Use" />
+      <h3 className="text-xl font-semibold mt-4">Easy to Use</h3>
+      <p className="text-gray-600 mt-2">
+        Post your books in just a few clicks and reach students instantly.
+      </p>
+    </div>
 
-      </div>
-      </div>
+  
+    <div className="p-6 border rounded-2xl shadow-md hover:shadow-lg transition">
+      <Image src="https://img.icons8.com/color/96/conference.png?utm_source=chatgpt.com" width={50} height={50} className="text-center" alt="Student Community" />
+      <h3 className="text-xl font-semibold mt-4">Student Community</h3>
+      <p className="text-gray-600 mt-2">
+        Connect with fellow students and exchange knowledge along with books.
+      </p>
+    </div>
+    
+  </div>
+</div>
    </div>
   );
 }
