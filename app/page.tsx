@@ -20,19 +20,7 @@ export default function Home() {
 <Image src="/background.png" width={350} height={300} alt="image"/>
     </div>
     </div>
-    <div className="mt-10 ml-100 w-full max-w-2xl">
-        <div className="flex">
-          <input
-            type="text"
-            placeholder="Search books..."
-            className="flex-grow border  border-gray-400 rounded-l-xl px-4 py-2 text-lg focus:outline-blue-500"
-          />
-          <button className="bg-green-600 text-white px-4 py-2 rounded-r-xl cursor-pointer text-lg flex items-center gap-2">
-            <HiMagnifyingGlass size={20} />
-            Search
-          </button>
-        </div>
-      </div>
+  
       
       <div className="mt-10 ml-20 mr-20">
   <p className="font-bold text-2xl text-center mb-8">Why Choose Us?</p>
