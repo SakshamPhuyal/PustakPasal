@@ -74,6 +74,7 @@ export default function Browse() {
               <p className="text-gray-600">Author: {book.author}</p>
               <p className="text-gray-600">Category: {book.category}</p>
               <p className="text-green-700 font-bold mt-2">Rs. {book.price}</p>
+              <button className="h-10 w-22 ml-40 cursor-pointer bg-green-400 rounded-2xl mt-2"> Buy </button>
             </div>
           ))
         ) : (
