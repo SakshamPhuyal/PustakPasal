@@ -37,7 +37,7 @@ export default function Browse() {
 
   return (
     <div className="p-10">
-      <p className="text-3xl font-bold mb-8">Browse Books</p>
+      <p className="text-5xl font-bold mb-8">Browse Books</p>
       <div className="max-w-2xl mb-10 ml-80">
         <div className="flex">
           <input

@@ -121,7 +121,7 @@ export default function AddBooks() {
             value={form.image}
             onChange={handleChange}
             className="w-full border rounded-md p-2"
-            placeholder="Paste image URL or filename (e.g. math10.jpg)"
+            placeholder="Paste image URL"
           />
           <p className="text-sm text-gray-500 mt-1">
             

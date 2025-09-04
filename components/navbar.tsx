@@ -5,7 +5,7 @@ export const Navbar=()=>{
     <nav className="flex items-center justify-between p-4 text-2xl border-b border:black">
 <div className="ml-15">
     
-   <Link className="flex" href="/"><Image src="/book.png" alt="book" width={60} height={30}/> PustakPasal</Link> 
+   <Link className="flex text-3xl" href="/"><Image src="/book.png" alt="book" width={60} height={30}/> PustakPasal</Link> 
 </div>
 <div className="flex ml-150 gap-10">
     <Link className="hover:text-blue-600" href="/">Home</Link>
